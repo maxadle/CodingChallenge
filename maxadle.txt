@@ -1,0 +1,4 @@
+La solucion propuesta es un aplicación con Angular (1.6) como front End y web api. 
+En el backend se agrego un proyecto de Application que tiene como responsabilidad recibir los request de la api 
+y llamar a la capa de datos, transformar las entities en DTOs y devolverlos al controller que a su vez enviara 
+mediante json los datos para mostrar en la vista.
