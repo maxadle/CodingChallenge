@@ -66,7 +66,7 @@
                             <div class="col-md-4">
                                 <input class="form-control"
                                        id="inputDescripcion"
-                                       style="width: 200px;"
+                                       style="width: 400px;"
                                        type="text"
                                        ng-model="title.descripcion" />
                             </div>
@@ -78,14 +78,15 @@
                             <label class="col-md-2 control-label"
                                    for="inputDetalle">Detalle</label>
                             <div class="col-md-4">
-                                <input class="form-control"
-                                       id="inputDetalle"
-                                       type="text"
-                                       style="width: 400px;"
-                                       ng-model="title.detalle" />
+                                <textarea class="form-control"
+                                          id="inputDetalle"
+                                          type="text"
+                                          style="width: 400px;"
+                                          ng-model="title.detalle">
+
+                                </textarea>
                             </div>
                         </div>
-
 
                         <div class="form-group col-md-6">
                             <label class="col-md-2 control-label"
