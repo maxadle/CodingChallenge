@@ -25,10 +25,11 @@ namespace CodingChallenge
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                name: "TermSearhApi",
+                routeTemplate: "api/{controller}/{searchTerm}",
+                defaults: new { searchTerm = RouteParameter.Optional }
             );
+
         }
     }
 }

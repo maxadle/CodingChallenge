@@ -25,6 +25,22 @@ namespace Application.Services
             });
         }
 
+        public IEnumerable<TituloDto> GetTitlesBySearchTerm(string searchTerm)
+        {
+            var titleRepository = new MockRepository().TituloRepository;
+            var titles = titleRepository.GetTitulos().Where(x=>x.Descripcion.ToLower().Contains(searchTerm.ToLower()));
+
+            return titles.Select(x => new TituloDto
+            {
+                Id = x.Id,
+                Descripcion = x.Descripcion,
+                Detalle = x.Detalle,
+                Moneda = x.Moneda.ToString(),
+                Simbolo = x.Simbolo,
+                Tipo = x.Tipo.ToString()
+            });
+        }
+
         public TituloDto GetById(int id)
         {
             throw new NotImplementedException();

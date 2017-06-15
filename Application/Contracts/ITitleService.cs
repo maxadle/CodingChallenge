@@ -6,6 +6,9 @@ namespace Application.Contracts
     public interface ITitleService
     {
         IEnumerable<TituloDto> GetAllTitles();
+
+        IEnumerable<TituloDto> GetTitlesBySearchTerm(string searchTerm);
+
         TituloDto GetById(int id);
         void Insert(TituloDto titulo);
         void Update(TituloDto titulo);

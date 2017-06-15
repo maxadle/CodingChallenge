@@ -11,7 +11,7 @@
 
         $scope.findTitleByDescription = function (descripcion) {
             return titleResource.query({
-                $filter: "substringof('" + descripcion + "', Descripcion)"
+                searchTerm: descripcion
             }).$promise;
 
         };

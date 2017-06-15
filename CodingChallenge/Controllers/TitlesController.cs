@@ -14,16 +14,16 @@ namespace CodingChallenge.Controllers
         {
             _titleService = new TitleService();
         }
-        // GET api/<controller>
+
+        //GET api/<controller>
         public IEnumerable<TituloDto> Get()
         {
             return _titleService.GetAllTitles();
         }
 
-        // GET api/<controller>/5
-        public TituloDto Get(int id)
+        public IEnumerable<TituloDto> Get(string searchTerm)
         {
-            return _titleService.GetById(id);
+            return _titleService.GetTitlesBySearchTerm(searchTerm);
         }
 
         // POST api/<controller>

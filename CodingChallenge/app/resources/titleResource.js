@@ -9,7 +9,7 @@
                  titleResource]);
 
     function titleResource($resource, appSettings) {
-        return $resource(appSettings.serverPath + "/api/titles/:id", null,
+        return $resource(appSettings.serverPath + "/api/titles/:searchTerm", { searchTerm: '@searchTerm' },
             {
                 'update': { method: 'PUT' }
             });

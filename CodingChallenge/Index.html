@@ -12,7 +12,7 @@
 <script src="Scripts/bootstrap.min.js"></script>
 <script src="Scripts/angular-ui/ui-utils.min.js"></script>
 <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
-
+<script src="Scripts/angular-gridster.min.js"></script>
 <!--application scripts-->
 <script src="app/services/common.services.js"></script>
 <script src="app/appModule.js"></script>
@@ -27,95 +27,110 @@
 </head>
 <body>
     <div ng-controller="titleController">
-        <div class="form-group" style="float:left;">
-            <label class="font-label" style="display:block; text-align:left"
+        <div class="col-md-12 panel-body">
+            <label class="font-label"
                    for=titleTypeHead>Busqueda</label>
 
-            <div style="display:block;">
+            <div>
                 <input type="text"
                        name=titleTypeHead id=titleTypeHead
                        ng-model="title"
                        placeholder="Ingrese titulo"
                        uib-typeahead="title as title.descripcion for title in findTitleByDescription($viewValue) | limitTo:8"
-                       class=""
-                       style="width: 300px;">
+                       style="width: 500px;">
             </div>
         </div>
 
-        <form class="form-horizontal" name="titleForm" novalidate>
-            <fieldset>
-                <legend>Detalle del Titulo</legend>
+        <br>
+        <div class="panel-body col-md-12">
+            <form class="form-horizontal" name="titleForm" novalidate>
+                <fieldset>
+                    <legend>Detalle del Titulo</legend>
 
-                <div class="form-group col-md-6">
-                    <label class="col-md-2 control-label"
-                           for="inputDescripcion">Descripcion</label>
-                    <div class="col-md-4">
-                        <input class="form-control"
-                               id="inputDescripcion"
-                               type="text"
-                               ng-model="title.descripcion" />
+                    <div class="row">
+
+                        <div class="form-group col-md-6">
+                            <label class="col-md-2 control-label"
+                                   for="inputId">Id</label>
+                            <div class="col-md-4">
+                                <input class="form-control"
+                                       id="inputId"
+                                       type="text"
+                                       ng-model="title.id" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label class="col-md-2 control-label"
+                                   for="inputDescripcion">Descripcion</label>
+                            <div class="col-md-4">
+                                <input class="form-control"
+                                       id="inputDescripcion"
+                                       style="width: 200px;"
+                                       type="text"
+                                       ng-model="title.descripcion" />
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group col-md-6">
-                    <label class="col-md-2 control-label"
-                           for="inputDetalle">Detalle</label>
-                    <div class="col-md-4">
-                        <input class="form-control"
-                               id="inputDetalle"
-                               type="text"
-                               ng-model="title.detalle" />
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label class="col-md-2 control-label"
+                                   for="inputDetalle">Detalle</label>
+                            <div class="col-md-4">
+                                <input class="form-control"
+                                       id="inputDetalle"
+                                       type="text"
+                                       style="width: 400px;"
+                                       ng-model="title.detalle" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group col-md-6">
+                            <label class="col-md-2 control-label"
+                                   for="inputMoneda">Moneda</label>
+                            <div class="col-md-4">
+                                <input class="form-control"
+                                       id="inputMoneda"
+                                       type="text"
+                                       style="width: 200px;"
+                                       ng-model="title.moneda" />
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group col-md-6">
-                    <label class="col-md-2 control-label"
-                           for="inputId">Id</label>
-                    <div class="col-md-4">
-                        <input class="form-control"
-                               id="inputId"
-                               type="text"
-                               ng-model="title.id" />
+                    <div class="row">
+
+                        <div class="form-group col-md-6">
+                            <label class="col-md-2 control-label"
+                                   for="inputSimbolo">Simbolo</label>
+                            <div class="col-md-4">
+                                <input class="form-control"
+                                       id="inputSimbolo"
+                                       type="text"
+                                       style="width: 200px;"
+                                       ng-model="title.simbolo" />
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label class="col-md-2 control-label"
+                                   for="inputTipo">Tipo</label>
+                            <div class="col-md-4">
+                                <input class="form-control"
+                                       id="inputTipo"
+                                       type="text"
+                                       style="width: 200px;"
+                                       ng-model="title.tipo" />
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group col-md-6">
-                    <label class="col-md-2 control-label"
-                           for="inputMoneda">Moneda</label>
-                    <div class="col-md-4">
-                        <input class="form-control"
-                               id="inputMoneda"
-                               type="text"
-                               ng-model="title.moneda" />
-                    </div>
-                </div>
-
-                <div class="form-group col-md-6">
-                    <label class="col-md-2 control-label"
-                           for="inputSimbolo">Simbolo</label>
-                    <div class="col-md-4">
-                        <input class="form-control"
-                               id="inputSimbolo"
-                               type="text"
-                               ng-model="title.simbolo" />
-                    </div>
-                </div>
-
-                <div class="form-group col-md-6">
-                    <label class="col-md-2 control-label"
-                           for="inputTipo">Tipo</label>
-                    <div class="col-md-4">
-                        <input class="form-control"
-                               id="inputTipo"
-                               type="text"
-                               ng-model="title.tipo" />
-                    </div>
-                </div>
-
-            </fieldset>
-        </form>
-
-
+                </fieldset>
+            </form>
+        </div>
     </div>
+
 </body>
 </html>
